@@ -1,4 +1,4 @@
-package pl.altkom.edu.mwysokinski.policyservice.web;
+package pl.altkom.edu.mwysokinski.caseservice.web;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(PolicyServiceApplication.class);
+		return application.sources(Application.class);
 	}
 
 }
