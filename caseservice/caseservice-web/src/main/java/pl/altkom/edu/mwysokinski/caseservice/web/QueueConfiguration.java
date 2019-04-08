@@ -1,4 +1,4 @@
-package pl.altkom.edu.mwysokinski.policyservice.web;
+package pl.altkom.edu.mwysokinski.caseservice.web;
 
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -12,8 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class QueueConfiguration {
 
     public static final String RABBITMQ_HOSTNAME = "localhost";
-    public static final String EXCHANGE = "policy.created.exchange";
-    public static final String ROUTING_KEY = "";
+    public static final String QUEUE = "policy.created.queue";
 
     @Bean
     public ConnectionFactory connectionFactory() {
