@@ -1,5 +1,7 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.enums;
 
-public enum LimitPeriod {
+import java.io.Serializable;
+
+public enum LimitPeriod implements Serializable {
     POLICY_YEAR
 }

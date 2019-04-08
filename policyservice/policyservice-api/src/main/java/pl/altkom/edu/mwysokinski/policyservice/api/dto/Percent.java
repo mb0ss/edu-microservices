@@ -1,10 +1,11 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Percent {
+public class Percent implements Serializable {
 
-    BigDecimal percent;
+    private BigDecimal percent;
 
     public BigDecimal getPercent() {
         return percent;

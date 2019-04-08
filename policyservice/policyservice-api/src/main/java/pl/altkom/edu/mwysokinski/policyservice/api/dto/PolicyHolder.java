@@ -1,12 +1,14 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-public class PolicyHolder {
+import java.io.Serializable;
 
-    String firstName;
-    String lastName;
-    String pesel;
-    String accountNumber;
-    Address address;
+public class PolicyHolder implements Serializable {
+
+    private String firstName;
+    private String lastName;
+    private String pesel;
+    private String accountNumber;
+    private Address address;
 
     public String getFirstName() {
         return firstName;

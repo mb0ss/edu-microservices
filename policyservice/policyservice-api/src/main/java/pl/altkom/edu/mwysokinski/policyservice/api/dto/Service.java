@@ -1,10 +1,12 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-public class Service {
+import java.io.Serializable;
 
-    String code;
-    Percent coPayment;
-    Limit limit;
+public class Service implements Serializable {
+
+    private String code;
+    private Percent coPayment;
+    private Limit limit;
 
     public String getCode() {
         return code;

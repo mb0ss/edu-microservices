@@ -3,20 +3,21 @@ package pl.altkom.edu.mwysokinski.policyservice.api.event;
 import pl.altkom.edu.mwysokinski.policyservice.api.dto.Cover;
 import pl.altkom.edu.mwysokinski.policyservice.api.dto.PolicyHolder;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class PolicyVersionCreated {
+public class PolicyVersionCreated implements Serializable {
 
-    String policyNumber;
-    String productCode;
-    PolicyHolder policyHolder;
-    Date policyValidFrom;
-    Date policyValidTo;
-    Integer versionNumber;
-    Date versionValidFrom;
-    Date versionValidTo;
-    List<Cover> covers;
+    private String policyNumber;
+    private String productCode;
+    private PolicyHolder policyHolder;
+    private Date policyValidFrom;
+    private Date policyValidTo;
+    private Integer versionNumber;
+    private Date versionValidFrom;
+    private Date versionValidTo;
+    private List<Cover> covers;
 
     public String getPolicyNumber() {
         return policyNumber;
