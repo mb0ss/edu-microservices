@@ -1,9 +1,8 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Percent implements Serializable {
+public class Percent {
 
     private BigDecimal percent;
 
@@ -13,6 +12,13 @@ public class Percent implements Serializable {
 
     public void setPercent(BigDecimal percent) {
         this.percent = percent;
+    }
+
+    @Override
+    public String toString() {
+        return "Percent{" +
+                "percent=" + percent +
+                '}';
     }
 
 }

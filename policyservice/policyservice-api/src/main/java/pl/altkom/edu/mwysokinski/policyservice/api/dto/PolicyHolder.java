@@ -1,8 +1,6 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-import java.io.Serializable;
-
-public class PolicyHolder implements Serializable {
+public class PolicyHolder {
 
     private String firstName;
     private String lastName;
@@ -48,5 +46,16 @@ public class PolicyHolder implements Serializable {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "PolicyHolder{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", pesel='" + pesel + '\'' +
+                ", accountNumber='" + accountNumber + '\'' +
+                ", address=" + address +
+                '}';
     }
 }

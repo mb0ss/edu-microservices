@@ -1,8 +1,6 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-import java.io.Serializable;
-
-public class Address implements Serializable {
+public class Address {
 
     private String country;
     private String city;
@@ -39,5 +37,15 @@ public class Address implements Serializable {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", street='" + street + '\'' +
+                '}';
     }
 }

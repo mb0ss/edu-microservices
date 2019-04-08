@@ -1,9 +1,8 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class Cover implements Serializable {
+public class Cover {
 
     private String coverCode;
     private List<Service> services;
@@ -22,5 +21,13 @@ public class Cover implements Serializable {
 
     public void setServices(List<Service> services) {
         this.services = services;
+    }
+
+    @Override
+    public String toString() {
+        return "Cover{" +
+                "coverCode='" + coverCode + '\'' +
+                ", services=" + services +
+                '}';
     }
 }

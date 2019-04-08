@@ -1,8 +1,6 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-import java.io.Serializable;
-
-public class Service implements Serializable {
+public class Service {
 
     private String code;
     private Percent coPayment;
@@ -30,5 +28,14 @@ public class Service implements Serializable {
 
     public void setLimit(Limit limit) {
         this.limit = limit;
+    }
+
+    @Override
+    public String toString() {
+        return "Service{" +
+                "code='" + code + '\'' +
+                ", coPayment=" + coPayment +
+                ", limit=" + limit +
+                '}';
     }
 }

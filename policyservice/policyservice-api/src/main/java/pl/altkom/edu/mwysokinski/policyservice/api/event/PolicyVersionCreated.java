@@ -3,11 +3,10 @@ package pl.altkom.edu.mwysokinski.policyservice.api.event;
 import pl.altkom.edu.mwysokinski.policyservice.api.dto.Cover;
 import pl.altkom.edu.mwysokinski.policyservice.api.dto.PolicyHolder;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class PolicyVersionCreated implements Serializable {
+public class PolicyVersionCreated {
 
     private String policyNumber;
     private String productCode;
@@ -90,4 +89,20 @@ public class PolicyVersionCreated implements Serializable {
     public void setCovers(List<Cover> covers) {
         this.covers = covers;
     }
+
+    @Override
+    public String toString() {
+        return "PolicyVersionCreated{" +
+                "policyNumber='" + policyNumber + '\'' +
+                ", productCode='" + productCode + '\'' +
+                ", policyHolder=" + policyHolder +
+                ", policyValidFrom=" + policyValidFrom +
+                ", policyValidTo=" + policyValidTo +
+                ", versionNumber=" + versionNumber +
+                ", versionValidFrom=" + versionValidFrom +
+                ", versionValidTo=" + versionValidTo +
+                ", covers=" + covers +
+                '}';
+    }
+
 }

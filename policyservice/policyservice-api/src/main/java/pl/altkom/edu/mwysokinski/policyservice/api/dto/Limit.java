@@ -2,9 +2,7 @@ package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
 import pl.altkom.edu.mwysokinski.policyservice.api.enums.LimitPeriod;
 
-import java.io.Serializable;
-
-public class Limit implements Serializable {
+public class Limit {
 
     private Integer maxQuantity;
     private Integer maxAmount;
@@ -32,5 +30,14 @@ public class Limit implements Serializable {
 
     public void setLimitPeriod(LimitPeriod limitPeriod) {
         this.limitPeriod = limitPeriod;
+    }
+
+    @Override
+    public String toString() {
+        return "Limit{" +
+                "maxQuantity=" + maxQuantity +
+                ", maxAmount=" + maxAmount +
+                ", limitPeriod=" + limitPeriod +
+                '}';
     }
 }
