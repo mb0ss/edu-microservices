@@ -14,13 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class QueueConfiguration {
 
     @Value("${rabbitmq.hostname}")
-    public static String RABBITMQ_HOSTNAME;
-
-    @Value("${rabbitmq.policy.created.exchange}")
-    public static String EXCHANGE;
-
-    @Value("${rabbitmq.routing.key}")
-    public static String ROUTING_KEY;
+    private String RABBITMQ_HOSTNAME;
 
     @Bean
     public ConnectionFactory connectionFactory() {

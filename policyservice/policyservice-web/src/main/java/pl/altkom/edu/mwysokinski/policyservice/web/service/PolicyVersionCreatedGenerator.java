@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import pl.altkom.edu.mwysokinski.policyservice.api.dto.*;
@@ -14,12 +15,15 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.LinkedList;
 
-import static pl.altkom.edu.mwysokinski.policyservice.web.QueueConfiguration.EXCHANGE;
-import static pl.altkom.edu.mwysokinski.policyservice.web.QueueConfiguration.ROUTING_KEY;
-
 
 @Service
 public class PolicyVersionCreatedGenerator {
+
+    @Value("${rabbitmq.policy.created.exchange}")
+    private String EXCHANGE;
+
+    @Value("${rabbitmq.routing.key}")
+    private String ROUTING_KEY;
 
     private Logger log = LoggerFactory.getLogger(PolicyVersionCreatedGenerator.class);
     private RabbitTemplate rabbitTemplate;
