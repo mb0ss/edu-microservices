@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: file://C:/edu/microservices
+          uri: file://C:/edu/edu-microservices-config
     consul:
       host: localhost
       port: 8500
