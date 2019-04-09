@@ -13,13 +13,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class QueueConfiguration {
 
-    @Value("rabbitmq.hostname")
+    @Value("${rabbitmq.hostname}")
     public static String RABBITMQ_HOSTNAME;
 
-    @Value("rabbitmq.policy.created.exchange")
-    public static String EXCHANGE = "policy.created.exchange";
+    @Value("${rabbitmq.policy.created.exchange}")
+    public static String EXCHANGE = "policy.created.exchange|";
 
-    @Value("rabbitmq.routing.key")
+    @Value("${rabbitmq.routing.key}")
     public static String ROUTING_KEY = "";
 
     @Bean
