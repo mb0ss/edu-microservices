@@ -1,4 +1,4 @@
-package pl.altkom.edu.mwysokinski.caseservice.web;
+package pl.altkom.edu.mwysokinski.configserver.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
