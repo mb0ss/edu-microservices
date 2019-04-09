@@ -17,10 +17,10 @@ public class QueueConfiguration {
     public static String RABBITMQ_HOSTNAME;
 
     @Value("${rabbitmq.policy.created.exchange}")
-    public static String EXCHANGE = "policy.created.exchange|";
+    public static String EXCHANGE;
 
     @Value("${rabbitmq.routing.key}")
-    public static String ROUTING_KEY = "";
+    public static String ROUTING_KEY;
 
     @Bean
     public ConnectionFactory connectionFactory() {
