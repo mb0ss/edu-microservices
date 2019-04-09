@@ -6,15 +6,21 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class QueueConfiguration {
 
-    public static final String RABBITMQ_HOSTNAME = "localhost";
-    public static final String EXCHANGE = "policy.created.exchange";
-    public static final String ROUTING_KEY = "";
+    @Value("rabbitmq.hostname")
+    public static String RABBITMQ_HOSTNAME;
+
+    @Value("rabbitmq.policy.created.exchange")
+    public static String EXCHANGE = "policy.created.exchange";
+
+    @Value("rabbitmq.routing.key")
+    public static String ROUTING_KEY = "";
 
     @Bean
     public ConnectionFactory connectionFactory() {
