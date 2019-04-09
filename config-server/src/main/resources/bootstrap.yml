@@ -6,6 +6,7 @@ spring:
       server:
         git:
           uri: file://C:/edu/edu-microservices-config
+          refreshRate: 60
     consul:
       host: localhost
       port: 8500
