@@ -9,12 +9,27 @@
         <groupId>pl.altkom.edu.mwysokinski</groupId>
         <artifactId>policyservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath>
     </parent>
+
+    <properties>
+        <org.springframework.cloud.version>2.1.1.RELEASE</org.springframework.cloud.version>
+    </properties>
 
     <groupId>pl.altkom.edu.mwysokinski</groupId>
     <artifactId>policyservice-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+            <version>${org.springframework.cloud.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${org.springframework.cloud.version}</version>
+        </dependency>
+    </dependencies>
 </project>
