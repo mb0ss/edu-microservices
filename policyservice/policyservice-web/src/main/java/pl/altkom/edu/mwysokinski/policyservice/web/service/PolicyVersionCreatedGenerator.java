@@ -81,7 +81,7 @@ public class PolicyVersionCreatedGenerator {
         event.setCovers(covers);
 
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, event);
-        log.info(event.toString());
+        log.info("published " + event.getClass());
     }
 
 }
