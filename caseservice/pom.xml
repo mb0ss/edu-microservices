@@ -9,10 +9,25 @@
     <packaging>pom</packaging>
     <name>CaseService</name>
 
+    <properties>
+        <org.projectlombok.version>1.18.6</org.projectlombok.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
     <modules>
         <module>caseservice-api</module>
         <module>caseservice-impl</module>
         <module>caseservice-web</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 </project>
