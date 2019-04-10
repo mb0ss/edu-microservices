@@ -7,7 +7,6 @@ spring:
       failFast: true
       retry:
         max-attempts: 10
-        max-interval: 60000
         initial-interval: 1000
         multiplier: 2
     consul:
