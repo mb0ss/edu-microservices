@@ -61,15 +61,14 @@ public class PolicyVersionCreatedGenerator {
         serviceDto.setCoPayment(percentDto);
         serviceDto.setLimitDto(limitDto);
 
-        LinkedList<ServiceDto> serviceDtos =
-                new LinkedList<ServiceDto>();
+        LinkedList<ServiceDto> serviceDtos = new LinkedList<>();
         serviceDtos.add(serviceDto);
 
         CoverDto cover = new CoverDto();
         cover.setCoverCode("CoverCode");
         cover.setServiceDtos(serviceDtos);
 
-        LinkedList<CoverDto> covers = new LinkedList<CoverDto>();
+        LinkedList<CoverDto> covers = new LinkedList<>();
         covers.add(cover);
 
         PolicyVersionCreatedEvent event = new PolicyVersionCreatedEvent();
