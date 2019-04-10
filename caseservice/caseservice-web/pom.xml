@@ -19,7 +19,7 @@
         <policyservice.version>0.0.1-SNAPSHOT</policyservice.version>
         <com.fasterxml.jackson.core.version>2.9.5</com.fasterxml.jackson.core.version>
         <com.netflix.archaius.version>0.7.6</com.netflix.archaius.version>
-        <com.google.guava.version>13.0-rc1</com.google.guava.version>
+        <com.google.guava.version>27.1-jre</com.google.guava.version>
     </properties>
 
     <groupId>pl.altkom.edu.mwysokinski</groupId>
@@ -49,6 +49,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${com.google.guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>${org.springframework.cloud.version}</version>
         </dependency>
 
         <dependency>

@@ -1,5 +1,6 @@
 package pl.altkom.edu.mwysokinski.caseservice.web.controller.rest;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,15 @@ public class CaseRestController {
     @Autowired
     private PolicyFeignClientProxy policyFeignClientProxy;
 
+    @HystrixCommand(fallbackMethod = "getPolicyByCaseNumberCircuitBreaker")
     @GetMapping("/case/{caseNumber}/policy")
     public PolicyDto getPolicyByCaseNumber(@PathVariable("caseNumber") String caseNumber) {
         LOG.info("getPolicyByCaseNumber for " + caseNumber);
         return policyFeignClientProxy.getPolicyByNumber(caseNumber);
     }
 
+    public PolicyDto getPolicyByCaseNumberCircuitBreaker(@PathVariable("caseNumber") String caseNumber) {
+        LOG.info("getPolicyByCaseNumberCircuitBreaker for " + caseNumber);
+        return null;
+    }
 }
