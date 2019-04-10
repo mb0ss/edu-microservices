@@ -11,4 +11,4 @@ spring:
       host: localhost
       port: 8500
       discovery:
-        instanceId: ${spring.application.name}:${random.value}
+        instanceId: ${spring.application.name}:${server.port}
