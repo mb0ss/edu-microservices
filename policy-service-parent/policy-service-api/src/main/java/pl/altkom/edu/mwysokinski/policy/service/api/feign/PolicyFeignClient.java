@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.altkom.edu.mwysokinski.policy.service.api.dto.PolicyDto;
 
-@FeignClient("policy")
+@FeignClient("policy-service")
 public interface PolicyFeignClient {
 
     @RequestMapping(value = "/rest/policy/{policyNumber}", method = RequestMethod.GET)
