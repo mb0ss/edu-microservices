@@ -9,11 +9,11 @@ import pl.altkom.edu.mwysokinski.policyservice.api.event.PolicyVersionCreatedEve
 @Service
 public class PolicyVersionCreatedListener {
 
-    private static Logger log = LoggerFactory.getLogger(PolicyVersionCreatedListener.class);
+    private static Logger LOG = LoggerFactory.getLogger(PolicyVersionCreatedListener.class);
 
     @RabbitListener(queues = "${rabbitmq.policy.created.queue}")
     public void onEvent(final PolicyVersionCreatedEvent event) {
-        log.info(event.toString());
+        LOG.info("found" + event.getClass().getSimpleName());
     }
 
 }
