@@ -16,4 +16,10 @@ public class PolicyRestController {
         return new PolicyDto();
     }
 
+    @GetMapping("/policy/{policyNumber}/{date}")
+    public PolicyDto getPolicyByNumberAndDate(@PathParam("policyNumber") String policyNumber,
+                                              @PathParam("date") String date) {
+        return new PolicyDto();
+    }
+
 }
