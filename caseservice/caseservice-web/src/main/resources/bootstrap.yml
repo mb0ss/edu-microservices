@@ -4,8 +4,19 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+      failFast: true
+      retry:
+        max-attempts: 10
+        max-interval: 60000
+        initial-interval: 1000
+        multiplier: 2
     consul:
       host: localhost
       port: 8500
       discovery:
         instanceId: ${spring.application.name}:${server.port}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
