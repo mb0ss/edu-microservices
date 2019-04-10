@@ -2,7 +2,7 @@ package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
 import pl.altkom.edu.mwysokinski.policyservice.api.enums.LimitPeriod;
 
-public class Limit {
+public class LimitDto {
 
     private Integer maxQuantity;
     private Integer maxAmount;
@@ -34,7 +34,7 @@ public class Limit {
 
     @Override
     public String toString() {
-        return "Limit{" +
+        return "LimitDto{" +
                 "maxQuantity=" + maxQuantity +
                 ", maxAmount=" + maxAmount +
                 ", limitPeriod=" + limitPeriod +

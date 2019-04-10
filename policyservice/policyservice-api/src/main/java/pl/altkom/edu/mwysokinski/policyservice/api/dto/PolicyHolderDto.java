@@ -1,12 +1,12 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-public class PolicyHolder {
+public class PolicyHolderDto {
 
     private String firstName;
     private String lastName;
     private String pesel;
     private String accountNumber;
-    private Address address;
+    private AddressDto addressDto;
 
     public String getFirstName() {
         return firstName;
@@ -40,22 +40,22 @@ public class PolicyHolder {
         this.accountNumber = accountNumber;
     }
 
-    public Address getAddress() {
-        return address;
+    public AddressDto getAddressDto() {
+        return addressDto;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddressDto(AddressDto addressDto) {
+        this.addressDto = addressDto;
     }
 
     @Override
     public String toString() {
-        return "PolicyHolder{" +
+        return "PolicyHolderDto{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", pesel='" + pesel + '\'' +
                 ", accountNumber='" + accountNumber + '\'' +
-                ", address=" + address +
+                ", addressDto=" + addressDto +
                 '}';
     }
 }

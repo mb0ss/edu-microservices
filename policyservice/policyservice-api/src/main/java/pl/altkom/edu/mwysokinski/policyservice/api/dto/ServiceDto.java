@@ -1,10 +1,10 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-public class Service {
+public class ServiceDto {
 
     private String code;
-    private Percent coPayment;
-    private Limit limit;
+    private PercentDto coPayment;
+    private LimitDto limitDto;
 
     public String getCode() {
         return code;
@@ -14,28 +14,28 @@ public class Service {
         this.code = code;
     }
 
-    public Percent getCoPayment() {
+    public PercentDto getCoPayment() {
         return coPayment;
     }
 
-    public void setCoPayment(Percent coPayment) {
+    public void setCoPayment(PercentDto coPayment) {
         this.coPayment = coPayment;
     }
 
-    public Limit getLimit() {
-        return limit;
+    public LimitDto getLimitDto() {
+        return limitDto;
     }
 
-    public void setLimit(Limit limit) {
-        this.limit = limit;
+    public void setLimitDto(LimitDto limitDto) {
+        this.limitDto = limitDto;
     }
 
     @Override
     public String toString() {
-        return "Service{" +
+        return "ServiceDto{" +
                 "code='" + code + '\'' +
                 ", coPayment=" + coPayment +
-                ", limit=" + limit +
+                ", limitDto=" + limitDto +
                 '}';
     }
 }

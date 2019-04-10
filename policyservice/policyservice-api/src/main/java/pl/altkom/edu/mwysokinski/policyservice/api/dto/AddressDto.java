@@ -1,6 +1,6 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
-public class Address {
+public class AddressDto {
 
     private String country;
     private String city;
@@ -41,7 +41,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
+        return "AddressDto{" +
                 "country='" + country + '\'' +
                 ", city='" + city + '\'' +
                 ", zipCode='" + zipCode + '\'' +

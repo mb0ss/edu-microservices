@@ -1,11 +1,12 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
+import java.util.LinkedList;
 import java.util.List;
 
-public class Cover {
+public class CoverDto {
 
     private String coverCode;
-    private List<Service> services;
+    private List<ServiceDto> serviceDtos = new LinkedList<>();
 
     public String getCoverCode() {
         return coverCode;
@@ -15,19 +16,19 @@ public class Cover {
         this.coverCode = coverCode;
     }
 
-    public List<Service> getServices() {
-        return services;
+    public List<ServiceDto> getServiceDtos() {
+        return serviceDtos;
     }
 
-    public void setServices(List<Service> services) {
-        this.services = services;
+    public void setServiceDtos(List<ServiceDto> serviceDtos) {
+        this.serviceDtos = serviceDtos;
     }
 
     @Override
     public String toString() {
-        return "Cover{" +
+        return "CoverDto{" +
                 "coverCode='" + coverCode + '\'' +
-                ", services=" + services +
+                ", serviceDtos=" + serviceDtos +
                 '}';
     }
 }

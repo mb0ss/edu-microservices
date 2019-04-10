@@ -2,7 +2,7 @@ package pl.altkom.edu.mwysokinski.policyservice.api.dto;
 
 import java.math.BigDecimal;
 
-public class Percent {
+public class PercentDto {
 
     private BigDecimal percent;
 
@@ -16,7 +16,7 @@ public class Percent {
 
     @Override
     public String toString() {
-        return "Percent{" +
+        return "PercentDto{" +
                 "percent=" + percent +
                 '}';
     }

@@ -1,22 +1,23 @@
 package pl.altkom.edu.mwysokinski.policyservice.api.event;
 
-import pl.altkom.edu.mwysokinski.policyservice.api.dto.Cover;
-import pl.altkom.edu.mwysokinski.policyservice.api.dto.PolicyHolder;
+import pl.altkom.edu.mwysokinski.policyservice.api.dto.CoverDto;
+import pl.altkom.edu.mwysokinski.policyservice.api.dto.PolicyHolderDto;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
-public class PolicyVersionCreated {
+public class PolicyVersionCreatedEvent {
 
     private String policyNumber;
     private String productCode;
-    private PolicyHolder policyHolder;
+    private PolicyHolderDto policyHolderDto;
     private Date policyValidFrom;
     private Date policyValidTo;
     private Integer versionNumber;
     private Date versionValidFrom;
     private Date versionValidTo;
-    private List<Cover> covers;
+    private List<CoverDto> covers = new LinkedList<>();
 
     public String getPolicyNumber() {
         return policyNumber;
@@ -34,12 +35,12 @@ public class PolicyVersionCreated {
         this.productCode = productCode;
     }
 
-    public PolicyHolder getPolicyHolder() {
-        return policyHolder;
+    public PolicyHolderDto getPolicyHolderDto() {
+        return policyHolderDto;
     }
 
-    public void setPolicyHolder(PolicyHolder policyHolder) {
-        this.policyHolder = policyHolder;
+    public void setPolicyHolderDto(PolicyHolderDto policyHolderDto) {
+        this.policyHolderDto = policyHolderDto;
     }
 
     public Date getPolicyValidFrom() {
@@ -82,20 +83,20 @@ public class PolicyVersionCreated {
         this.versionValidTo = versionValidTo;
     }
 
-    public List<Cover> getCovers() {
+    public List<CoverDto> getCovers() {
         return covers;
     }
 
-    public void setCovers(List<Cover> covers) {
+    public void setCovers(List<CoverDto> covers) {
         this.covers = covers;
     }
 
     @Override
     public String toString() {
-        return "PolicyVersionCreated{" +
+        return "PolicyVersionCreatedEvent{" +
                 "policyNumber='" + policyNumber + '\'' +
                 ", productCode='" + productCode + '\'' +
-                ", policyHolder=" + policyHolder +
+                ", policyHolderDto=" + policyHolderDto +
                 ", policyValidFrom=" + policyValidFrom +
                 ", policyValidTo=" + policyValidTo +
                 ", versionNumber=" + versionNumber +

@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
-import pl.altkom.edu.mwysokinski.policyservice.api.event.PolicyVersionCreated;
+import pl.altkom.edu.mwysokinski.policyservice.api.event.PolicyVersionCreatedEvent;
 
 @Service
 public class PolicyVersionCreatedListener {
@@ -12,8 +12,8 @@ public class PolicyVersionCreatedListener {
     private static Logger log = LoggerFactory.getLogger(PolicyVersionCreatedListener.class);
 
     @RabbitListener(queues = "${rabbitmq.policy.created.queue}")
-    public void onEvent(final PolicyVersionCreated policyVersionCreated) {
-        log.info(policyVersionCreated.toString());
+    public void onEvent(final PolicyVersionCreatedEvent event) {
+        log.info(event.toString());
     }
 
 }

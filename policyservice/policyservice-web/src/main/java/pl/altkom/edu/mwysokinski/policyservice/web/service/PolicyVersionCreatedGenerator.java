@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import pl.altkom.edu.mwysokinski.policyservice.api.dto.*;
 import pl.altkom.edu.mwysokinski.policyservice.api.enums.LimitPeriod;
-import pl.altkom.edu.mwysokinski.policyservice.api.event.PolicyVersionCreated;
+import pl.altkom.edu.mwysokinski.policyservice.api.event.PolicyVersionCreatedEvent;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -35,47 +35,47 @@ public class PolicyVersionCreatedGenerator {
 
     @Scheduled(fixedRate = 3000)
     public void generatePolicyVersionCreatedMessage() {
-        Address address = new Address();
-        address.setCountry("PL");
-        address.setCity("Warsaw");
-        address.setStreet("Chłodna 51");
+        AddressDto addressDto = new AddressDto();
+        addressDto.setCountry("PL");
+        addressDto.setCity("Warsaw");
+        addressDto.setStreet("Chłodna 51");
 
-        PolicyHolder policyHolder = new PolicyHolder();
-        policyHolder.setFirstName("FirstName");
-        policyHolder.setLastName("LastName");
-        policyHolder.setPesel("11111111111");
-        policyHolder.setAccountNumber("00000000000000000000000000");
-        policyHolder.setAddress(address);
+        PolicyHolderDto policyHolderDto = new PolicyHolderDto();
+        policyHolderDto.setFirstName("FirstName");
+        policyHolderDto.setLastName("LastName");
+        policyHolderDto.setPesel("11111111111");
+        policyHolderDto.setAccountNumber("00000000000000000000000000");
+        policyHolderDto.setAddressDto(addressDto);
 
-        Percent percent = new Percent();
-        percent.setPercent(BigDecimal.TEN);
+        PercentDto percentDto = new PercentDto();
+        percentDto.setPercent(BigDecimal.TEN);
 
-        Limit limit = new Limit();
-        limit.setLimitPeriod(LimitPeriod.POLICY_YEAR);
-        limit.setMaxAmount(100);
-        limit.setMaxQuantity(100);
+        LimitDto limitDto = new LimitDto();
+        limitDto.setLimitPeriod(LimitPeriod.POLICY_YEAR);
+        limitDto.setMaxAmount(100);
+        limitDto.setMaxQuantity(100);
 
-        pl.altkom.edu.mwysokinski.policyservice.api.dto.Service service =
-                new pl.altkom.edu.mwysokinski.policyservice.api.dto.Service();
-        service.setCode("Code");
-        service.setCoPayment(percent);
-        service.setLimit(limit);
+        ServiceDto serviceDto =
+                new ServiceDto();
+        serviceDto.setCode("Code");
+        serviceDto.setCoPayment(percentDto);
+        serviceDto.setLimitDto(limitDto);
 
-        LinkedList<pl.altkom.edu.mwysokinski.policyservice.api.dto.Service> services =
-                new LinkedList<pl.altkom.edu.mwysokinski.policyservice.api.dto.Service>();
-        services.add(service);
+        LinkedList<ServiceDto> serviceDtos =
+                new LinkedList<ServiceDto>();
+        serviceDtos.add(serviceDto);
 
-        Cover cover = new Cover();
+        CoverDto cover = new CoverDto();
         cover.setCoverCode("CoverCode");
-        cover.setServices(services);
+        cover.setServiceDtos(serviceDtos);
 
-        LinkedList<Cover> covers = new LinkedList<Cover>();
+        LinkedList<CoverDto> covers = new LinkedList<CoverDto>();
         covers.add(cover);
 
-        PolicyVersionCreated event = new PolicyVersionCreated();
+        PolicyVersionCreatedEvent event = new PolicyVersionCreatedEvent();
         event.setPolicyNumber("PolicyNumber");
         event.setProductCode("ProductCode");
-        event.setPolicyHolder(policyHolder);
+        event.setPolicyHolderDto(policyHolderDto);
         event.setPolicyValidFrom(new Date());
         event.setVersionNumber(1);
         event.setVersionValidFrom(new Date());
