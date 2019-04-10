@@ -1,4 +1,4 @@
-package pl.altkom.edu.mwysokinski.policy.web;
+package pl.altkom.edu.mwysokinski.policy.service.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

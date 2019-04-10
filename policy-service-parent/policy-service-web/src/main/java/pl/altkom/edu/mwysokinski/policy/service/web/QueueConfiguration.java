@@ -1,4 +1,4 @@
-package pl.altkom.edu.mwysokinski.policy.web;
+package pl.altkom.edu.mwysokinski.policy.service.web;
 
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
